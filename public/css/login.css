@@ -1,0 +1,57 @@
+*{
+    font-family: Arial;
+}
+.container{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 3rem;
+}
+.formulario{
+    border-radius: 4px;
+    border: 1.5px solid black;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.label{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.inputs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+.inputs input{
+    width: 100%;
+    padding: 0.4rem;
+    outline: none;
+}
+.button{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.button button{
+    width: 30%;
+    padding: 00.4rem;
+}
