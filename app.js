@@ -4,7 +4,21 @@ const { engine } = require ('express-handlebars')
 const admin = require('./routes/admin')
 const mongoose = require('mongoose')
 const bodyparser = require('body-parser')
+const session = require('express-session')
+const flash = require('connect-flash')
 
+app.use(session({
+    secret: 'sxjAwf<k',
+    resave: true,
+    saveUninitialized: true
+}))
+app.use(flash())
+
+app.use((req, res, next)=>{
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    next()
+})
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/paroquiascj').then(()=>{
     useMongoClient: true

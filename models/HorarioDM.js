@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const horarioSJ = new Schema({
+const horarioDM = new Schema({
     Horario: {
         type: String,
         required: true
@@ -12,4 +12,4 @@ const horarioSJ = new Schema({
     }
 })
 
-mongoose.model("horarioSJ", horarioSJ)
+mongoose.model("horarioDM", horarioDM)

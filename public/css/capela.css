@@ -10,6 +10,18 @@
     justify-content: center;
     align-items: center;
 }
+.DomBosco form{
+    display: flex;
+    justify-content: space-between;
+}
+.SantaLuzia form{
+    display: flex;
+    justify-content: space-between;
+}
+.SaoJose form{
+    display: flex;
+    justify-content: space-between;
+}
 .DomBosco, .SantaLuzia, .SaoJose{
     width: 70%;
     margin-bottom: 3rem;
@@ -22,4 +34,13 @@ label, input, h1{
 }
 h1{
     color: #9f4747;
+}
+button{
+    background-color: rgb(11, 168, 11);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 0.3rem;
 }
