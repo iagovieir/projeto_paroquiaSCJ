@@ -32,15 +32,117 @@ router.get('/configN/Carrossel',(req, res)=>{
 })
 router.get('/configN/Capelas',(req, res)=>{
 
-    horarioDM.findOne({_id:"62fd46a3b7e658366665b46c"}).then((horarioDM)=>{
+    horarioDM.findById({_id:'62fd46a3b7e658366665b46c'}).then((horarioDM)=>{
+        horarioSJ.findById({_id:'63056630389fbeb07b5cbc48'}).then((horarioSJ)=>{
+            horarioSL.findById({_id:'63055e9811bd4bb16baffea7'}).then((horarioSL)=>{
+        
+        const horarioSanta = horarioSL.Horario
+        const diasSanta = horarioSL.Dias   
+        const horarioSao =  horarioSJ.Horario
+        const diasSao = horarioSJ.Dias
+        const horarioDom = horarioDM.Horario
+        const diasDom = horarioDM.Dias
+        const dias = {
+            Segunda: 'Segunda-Feira',
+            Terca: 'Terça-Feira',
+            Quarta: 'Quarta-Feira',
+            Quinta: 'Quinta-Feira',
+            Sexta: 'Sexta-Feira',
+            Sabado: 'Sábado',
+            Domingo: 'Domingo'
+        }
+        const diasDM = {
+         segDM : [],
+         terDM : [],
+         quaDM : [],
+         quiDM : [],
+         sexDM : [],
+         sabDM : [],
+         domDM : []
+        }
+
+        const diasSL = {
+         segSL : [],
+         terSL : [],
+         quaSL : [],
+         quiSL : [],
+         sexSL : [],
+         sabSL : [],
+        domSL  : []
+        }
+
+        const diasSJ = {
+         segSJ : [],
+         terSJ : [],
+         quaSJ : [],
+         quiSJ : [],
+         sexSJ : [],
+         sabSJ : [],
+         domSJ : []
+           }
+
+        if(diasDom == dias.Segunda){
+            diasDM.segDM.push('selected')
+        }if(diasDom == dias.Terca){
+            diasDM.terDM.push('selected')
+        }if(diasDom == dias.Quarta){
+            diasDM.quaDM.push('selected')
+        }if(diasDom == dias.Quinta){
+            diasDM.quiDM.push('selected')
+        }if(diasDom == dias.Sexta){
+            diasDM.sexDM.push('selected')
+        }if(diasDom == dias.Sabado){
+            diasDM.sabDM.push('selected')
+        }if(diasDom == dias.Domingo){
+            diasDM.domDM.push('selected')
+        }
+
+        if(diasSao == dias.Segunda){
+            diasSJ.segSJ.push('selected')
+        }if(diasSao == dias.Terca){
+            diasSJ.terSJ.push('selected')
+        }if(diasSao == dias.Quarta){
+            diasSJ.quaSJ.push('selected')
+        }if(diasSao == dias.Quinta){
+            diasSJ.quiSJ.push('selected')
+        }if(diasSao == dias.Sexta){
+            diasSJ.sexSJ.push('selected')
+        }if(diasSao == dias.Sabado){
+            diasSJ.sabSJ.push('selected')
+        }if(diasSao == dias.Domingo){
+            diasSJ.domSJ.push('selected')
+        }
+
+        if(diasSanta == dias.Segunda){
+            diasSL.segSL.push('selected')
+        }if(diasSanta == dias.Terca){
+            diasSL.terSL.push('selected')
+        }if(diasSanta == dias.Quarta){
+            diasSL.quaSL.push('selected')
+        }if(diasSanta == dias.Quinta){
+            diasSL.quiSL.push('selected')
+        }if(diasSanta == dias.Sexta){
+            diasSL.sexSL.push('selected')
+        }if(diasSanta == dias.Sabado){
+            diasSL.sabSL.push('selected')
+        }if(diasSanta == dias.Domingo){
+            diasSL.domSL.push('selected')
+        }
+        
 
         res.render('admin/configN/config-capelas', {
-            horario: horarioDM,
+            horarioDom: horarioDom,
+            horarioSanta: horarioSanta,
+            horarioSao: horarioSao,
+            diasDM: diasDM,
+            diasSJ: diasSJ,
+            diasSL: diasSL, 
             title:'Admin PSCJ - Capelas',
             configN: 'true',
             style: 'capela.css'
         })
         })
+    })
 })
 router.get('/configN/Galeria',(req, res)=>{
     res.render('admin/configN/config-galeria', {
@@ -54,6 +156,7 @@ router.get('/configN/Horario-Matriz',(req, res)=>{
         configN: 'true'
     })
 })
+})
 //Atualizando horários capelas.
 router.post('/configN/updateDM', (req, res)=>{
     horarioDM.findOne({_id:req.body.id}).then((horarioDM)=>{
@@ -61,7 +164,7 @@ router.post('/configN/updateDM', (req, res)=>{
         horarioDM.Dias = req.body.semanaDM
 
             horarioDM.save().then(()=>{
-                console.log('deu certo, dado atualizado com sucesso')
+                console.log('deu certo, dado atualizado')
                 res.redirect('/admin//configN/Capelas')
             }).catch((err)=>{
                 console.log('Houve um erro ao tentar atualizar o horário e dia, tente mais uma vez!' + err)
