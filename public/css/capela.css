@@ -10,6 +10,9 @@
     justify-content: center;
     align-items: center;
 }
+.div{
+    width: 60%;
+}
 .DomBosco form{
     display: flex;
     justify-content: space-between;
@@ -24,14 +27,21 @@
 }
 .DomBosco, .SantaLuzia, .SaoJose{
     width: 70%;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     border: 0.1rem solid #9f4747;
     border-radius: 1rem;
     padding: 2rem;
 }
-label, input, h1{
-    margin-bottom: 0.6rem;
+input, h1, select{
+    margin-bottom: 0.4rem;
 }
+input[type=text]{
+    width: 60%;
+    padding: 0.2rem;
+    margin-bottom: 0;
+}
+    
+
 h1{
     color: #9f4747;
 }

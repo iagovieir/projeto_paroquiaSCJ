@@ -37,11 +37,14 @@ router.get('/configN/Capelas',(req, res)=>{
             horarioSL.findById({_id:'63055e9811bd4bb16baffea7'}).then((horarioSL)=>{
         
         const horarioSanta = horarioSL.Horario
-        const diasSanta = horarioSL.Dias   
+        const diasSanta = horarioSL.Dias 
+        const localSanta = horarioSL.Local  
         const horarioSao =  horarioSJ.Horario
         const diasSao = horarioSJ.Dias
+        const localSao = horarioSJ.Local
         const horarioDom = horarioDM.Horario
         const diasDom = horarioDM.Dias
+        const localDom = horarioDM.Local
         const dias = {
             Segunda: 'Segunda-Feira',
             Terca: 'Terça-Feira',
@@ -137,6 +140,9 @@ router.get('/configN/Capelas',(req, res)=>{
             diasDM: diasDM,
             diasSJ: diasSJ,
             diasSL: diasSL, 
+            localDom: localDom,
+            localSanta: localSanta,
+            localSao: localSao,
             title:'Admin PSCJ - Capelas',
             configN: 'true',
             style: 'capela.css'
@@ -162,6 +168,7 @@ router.post('/configN/updateDM', (req, res)=>{
     horarioDM.findOne({_id:req.body.id}).then((horarioDM)=>{
         horarioDM.Horario = req.body.horarioDM
         horarioDM.Dias = req.body.semanaDM
+        horarioDM.Local = req.body.localDM
 
             horarioDM.save().then(()=>{
                 console.log('deu certo, dado atualizado')
@@ -176,6 +183,7 @@ router.post('/configN/updateSJ', (req, res)=>{
         horarioSJ.findOne({_id: req.body.id}).then((horarioSJ)=>{
             horarioSJ.Horario = req.body.horarioSJS
             horarioSJ.Dias = req.body.semanaSJS
+            horarioSJ.Local = req.body.localSJS
 
         horarioSJ.save().then(()=>{
             console.log('deu certo, dado atualizado')
@@ -191,6 +199,7 @@ router.post('/configN/updateSL', (req, res)=>{
 
                 horarioSL.Horario = req.body.horarioSTL,
                 horarioSL.Dias =  req.body.semanaSTL
+                horarioSL.Local = req.body.localSTL
 
             horarioSL.save().then(()=>{
                 console.log('deu certo, dado atualizado')

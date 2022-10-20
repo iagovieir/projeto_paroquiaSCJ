@@ -9,6 +9,10 @@ const horarioSJ = new Schema({
     Dias: {
         type: String,
         required: true
+    },
+    Local: {
+        type: String,
+        required: true
     }
 })
 

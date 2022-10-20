@@ -2,19 +2,20 @@
     <div class="DomBosco">
         <h1>Dom Bosco</h1>
         <form action="/admin/configN/updateDM" method="POST">
-            <div>
+            <div class="div">
                 <input type="hidden" name="id" value="62fd46a3b7e658366665b46c">
                 <label for="horarioDM">Horário:</label>  <input type="time" name="horarioDM" value="{{horarioDom}}"><br>
                 <label for="semanaDM">Dia:</label>
-                <select name="semanaDM" id="semanaDM">
-                    <option value="Segunda-Feira" {{diasSM.segDM}}>Segunda-Feira</option>
-                    <option value="Terça-Feira" {{diasSM.terDM}}>Terça-Feira</option>
-                    <option value="Quarta-Feira" {{diasDM.quaDM}}>Quarta-Feira</option>
-                    <option value="Quinta-Feira" {{diasDM.quiDM}}>Quinta-Feira</option>
-                    <option value="Sexta-Feira" {{diasDM.sexDom}}>Sexta-Feira</option>
-                    <option value="Sábado" {{diasDM.sabDM}}>Sábado</option>
-                    <option value="Domingo" {{diasDM.domDM}}>Domingo</option>
-                </select>
+                    <select name="semanaDM" id="semanaDM">
+                        <option value="Segunda-Feira" {{diasSM.segDM}}>Segunda-Feira</option>
+                        <option value="Terça-Feira" {{diasSM.terDM}}>Terça-Feira</option>
+                        <option value="Quarta-Feira" {{diasDM.quaDM}}>Quarta-Feira</option>
+                        <option value="Quinta-Feira" {{diasDM.quiDM}}>Quinta-Feira</option>
+                        <option value="Sexta-Feira" {{diasDM.sexDM}}>Sexta-Feira</option>
+                        <option value="Sábado" {{diasDM.sabDM}}>Sábado</option>
+                        <option value="Domingo" {{diasDM.domDM}}>Domingo</option>
+                    </select> <br>
+                <label for="localDM">Endereço:</label> <input type="text" name="localDM" value="{{localDom}}">
             </div>
             <div>
                 <button>Atualizar</button>
@@ -24,19 +25,20 @@
     <div class="SantaLuzia">
         <h1>Santa Luzia</h1>
         <form action="/admin/configN/updateSL" method="POST">
-            <div>
+            <div class="div">
                 <input type="hidden" name="id" value="63055e9811bd4bb16baffea7">
                 <label for="horarioSTL">Horário:</label>  <input type="time" name="horarioSTL" value="{{horarioSanta}}"> <br>
                 <label for="semanaSTL">Dia:</label>
-                <select name="semanaSTL" id="semanaSTL">
-                    <option value="Segunda-Feira" {{diasSL.segSL}}>Segunda-Feira</option>
-                    <option value="Terça-Feira" {{diasSL.terSL}}>Terça-Feira</option>
-                    <option value="Quarta-Feira" {{diasSL.quaSL}}>Quarta-Feira</option>
-                    <option value="Quinta-Feira" {{diasSL.quiSL}}>Quinta-Feira</option>
-                    <option value="Sexta-Feira" {{diasSL.sexSL}}>Sexta-Feira</option>
-                    <option value="Sábado-Feira" {{diasSL.sabSL}}>Sábado</option>
-                    <option value="Domingo-Feira" {{diasSL.domSL}}>Domingo</option>
-                </select>
+                    <select name="semanaSTL" id="semanaSTL">
+                        <option value="Segunda-Feira" {{diasSL.segSL}}>Segunda-Feira</option>
+                        <option value="Terça-Feira" {{diasSL.terSL}}>Terça-Feira</option>
+                        <option value="Quarta-Feira" {{diasSL.quaSL}}>Quarta-Feira</option>
+                        <option value="Quinta-Feira" {{diasSL.quiSL}}>Quinta-Feira</option>
+                        <option value="Sexta-Feira" {{diasSL.sexSL}}>Sexta-Feira</option>
+                        <option value="Sábado-Feira" {{diasSL.sabSL}}>Sábado</option>
+                        <option value="Domingo-Feira" {{diasSL.domSL}}>Domingo</option>
+                    </select><br>
+                <label for="localSTL">Endereço:</label> <input type="text" name="localSTL" value="{{localSanta}}">
             </div>
             <div>
                 <button>Atualizar</button>
@@ -47,7 +49,7 @@
     <div class="SaoJose">
         <h1>São José</h1>
         <form action="/admin/configN/updateSJ" method="POST">
-            <div>
+            <div class="div">
                 <input type="hidden" name="id" value="63056630389fbeb07b5cbc48">
                 <label for="horarioSJS">Horário:</label>  <input type="time" name="horarioSJS" value="{{horarioSao}}"> <br>
                 <label for="semanaSJS">Dia:</label>
@@ -59,7 +61,8 @@
                         <option value="Sexta-Feira" {{diasSJ.sexSJ}}>Sexta-Feira</option>
                         <option value="Sábado" {{diasSJ.sabSJ}}>Sábado</option>
                         <option value="Domingo" {{diasSJ.domSJ}}>Domingo</option>
-                    </select>
+                    </select><br>
+                <label for="localSJS">Endereço:</label> <input type="text" name="localSJS" value="{{localSao}}">
             </div>
             <div>
                 <button>Atualizar</button>
