@@ -150,19 +150,8 @@ router.get('/configN/Capelas',(req, res)=>{
         })
     })
 })
-router.get('/configN/Galeria',(req, res)=>{
-    res.render('admin/configN/config-galeria', {
-        title:'Admin PSCJ - Galeria',
-        configN: 'true'
-    })
 })
-router.get('/configN/Horario-Matriz',(req, res)=>{
-    res.render('admin/configN/config-horario-matriz', {
-        title:'Admin PSCJ - Horário Matriz',
-        configN: 'true'
-    })
-})
-})
+
 //Atualizando horários capelas.
 router.post('/configN/updateDM', (req, res)=>{
     horarioDM.findOne({_id:req.body.id}).then((horarioDM)=>{
@@ -209,6 +198,29 @@ router.post('/configN/updateSL', (req, res)=>{
             })
             })
 })
+
+router.get('/configN/Galeria',(req, res)=>{
+    res.render('admin/configN/config-galeria', {
+        title:'Admin PSCJ - Galeria',
+        configN: 'true'
+    })
+})
+
+router.get('/configN/Horario-Matriz',(req, res)=>{
+    res.render('admin/configN/config-horario-matriz', {
+        title:'Admin PSCJ - Horário Matriz',
+        configN: 'true'
+    })
+})
+
+router.get('/configN/Nossa-Historia',(req, res)=>{
+    res.render('admin/configN/config-nossa-hitoria', {
+        title:'Admin PSCJ - Nossa Hitória',
+        configN: 'true'
+    })
+})
+
+
 //rota do configS
 
 router.get('/configS',(req, res)=>{

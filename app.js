@@ -6,8 +6,7 @@ const mongoose = require('mongoose')
 const bodyparser = require('body-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
-//const multer = require('multer')
-//const upload = multer({dest: '/uploads'})
+const multer = require('multer')
 
 require('./models/HorarioDM')
 const horarioDM = mongoose.model('horarioDM')
@@ -31,6 +30,15 @@ app.use((req, res, next)=>{
     res.locals.error_msg = req.flash('error_msg')
     next()
 })
+
+const storage = multer.diskStorage({
+    destination: 'uploads',
+    filename: (req, file, cb) =>{
+        cb(null, Date.now + file.originalname)
+    }
+})
+
+const upload = multer({storage: storage})
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/paroquiascj').then(()=>{
@@ -63,34 +71,57 @@ app.get('/', (req, res)=>{
 app.get('/contatos', (req, res)=>{
     res.render('user/contatos', {
     title: 'PSCJ - Contatos',
-    partialsON:'true'
+    partialsON:'true',
+    style: 'contatos.css'
     })
 })
 app.get('/pastorais', (req, res)=>{
     res.render('user/pastorais', {
     title: 'PSCJ - Pastorais',
-    partialsON:'true'
+    partialsON:'true',
+    style: 'pastorais.css'
     })
 })
 app.get('/horarios-matriz', (req, res)=>{
     res.render('user/horarios-matriz', {
     title: 'PSCJ - Horários Matriz',
-    partialsON:'true'
+    partialsON:'true',
+    style: 'horario-matriz.css'
     })
 })
 app.get('/nossa-historia', (req, res)=>{
     res.render('user/historia', {
     title: 'PSCJ - Nossa História',
-    partialsON:'true'
+    partialsON:'true',
+    style: 'nossa-hitoria.css'
     })
 })
-//rotas dos eventos
-app.get('/eventos', (req, res)=>{
-    res.render('user/eventos', {
-    title: 'PSCJ - Eventos',
-    partialsON:'true'
+//rotas dos movimentos
+app.get('/movimentos', (req, res)=>{
+    res.render('user/movimentos', {
+    title: 'PSCJ - Movimentos',
+    partialsON:'true',
+    style: 'movimento.css'
     })
 })
+
+app.get('/movimentos/CadEJC', (req, res)=>{
+    res.render('user/CadEJC', {
+    title: 'PSCJ - Inscrição EJC',
+    partialsON:'true',
+    style: ''
+    })
+})
+
+app.get('/movimentos/CadECC', (req, res)=>{
+    res.render('user/CadECC', {
+    title: 'PSCJ - Inscrição ECC',
+    partialsON:'true',
+    style: ''
+    })
+})
+
+
 
 //rotas das comunidades
 app.get('/comunidades', (req, res)=>{
