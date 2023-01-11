@@ -4,6 +4,13 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #9f4747;
 }
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .name{
     display: flex;
     align-items: center;
@@ -11,7 +18,32 @@
     height: 7rem;
     background-color: #efefef;
 }
-.EJC, .ECC{
-    height: 10rem;
-
+.EJC,.ECC{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-bottom: #efefef solid;
+    margin-bottom: 2.5rem;
+}
+.EJC{
+    margin-top: 2rem;
+}
+.EJC div img{
+    width: 15rem;
+}
+.subDivs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subDivs div{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.ECC div img{
+    width: 12rem;
+}
+.movimentos{
+    background-color: #833232;
 }

@@ -19,7 +19,7 @@
     </style>
 
 {{#if configN}}
-<!-- CSS do configN secretaria-->
+<!-- CSS do configN noticias-->
     <style>
     .menulateral{
     display: flex;
@@ -62,6 +62,32 @@
     }
     .logo img{
         width: 6rem;
+    }
+    .msgG{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        width: 25%;
+        margin: 1rem 1rem 0 0;
+        padding: 1.3rem;
+        border-radius: 1rem;
+        background-color: rgb(11, 168, 11);
+        position: fixed;
+        right: 0;
+    }
+    .msgS{
+        width: 90%;
+    }
+    .btnclose{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        cursor: pointer;
+    }
+    .msgE{
+        width: 70%;
     }
     </style>
 {{/if}}
@@ -127,7 +153,7 @@
         position: fixed;
     }
     .logo{
-        width: 40%;
+        width: 30%;
     }
     .logo img{
         width: 3rem;
@@ -139,7 +165,7 @@
     .option{
         display: flex;
         align-items: center;
-        width: 60%;
+        width: 70%;
     }
     .option div{
         font-family:  Arial;
@@ -212,6 +238,7 @@
 
     {{#if configN}}
         {{>configN}}
+        {{>_msgN}}
     {{/if}}
     {{#if configS}}
         {{>configS}}

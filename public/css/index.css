@@ -1,3 +1,23 @@
-.bodyindex{
+.Body{
+    width: 100%;
+    padding-bottom: 2rem;
     padding-top: 3.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #9f4747;
+}
+.inicio{
+    background-color: #833232;
+}
+.name{
+    height: 7rem;
+    background-color: #efefef;
+}
+.label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+}
+.stories{
+    height: 60%;
 }

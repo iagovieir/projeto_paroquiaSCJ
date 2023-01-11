@@ -11,7 +11,7 @@ const horarioSL = mongoose.model('horarioSL')
 router.get('/',(req, res)=>{
     res.render('admin/login', {
         title:'PSCJ - Login Admin',
-        style: 'login.css'
+        style: 'config-login.css'
     })
 })
 //rotas do configN
@@ -20,14 +20,15 @@ router.get('/configN',(req, res)=>{
     res.render('admin/configN/adminNoticias', {
         title:'Admin PSCJ',
         configN: 'true',
-        style: 'inicioconfig.css',
+        style: 'config-inicio.css',
         nome: 'Alguém qualquer'
     })
 })
 router.get('/configN/Carrossel',(req, res)=>{
     res.render('admin/configN/config-carrossel', {
         title:'Admin PSCJ - Carrossel',
-        configN: 'true'
+        configN: 'true',
+        style: 'configN-carrosel.css'
     })
 })
 router.get('/configN/Capelas',(req, res)=>{
@@ -145,7 +146,7 @@ router.get('/configN/Capelas',(req, res)=>{
             localSao: localSao,
             title:'Admin PSCJ - Capelas',
             configN: 'true',
-            style: 'capela.css'
+            style: 'configN-capela.css'
         })
         })
     })
@@ -160,12 +161,13 @@ router.post('/configN/updateDM', (req, res)=>{
         horarioDM.Local = req.body.localDM
 
             horarioDM.save().then(()=>{
-                console.log('deu certo, dado atualizado')
+                req.flash('success_msg','Deu certo, horário Dom Bosco atualizado!')
                 res.redirect('/admin//configN/Capelas')
             }).catch((err)=>{
-                console.log('Houve um erro ao tentar atualizar o horário e dia, tente mais uma vez!' + err)
+                req.flash('error_msg','Deu errado, tente mais uma vez!')
+                res.redirect('/admin//configN/Capelas')
             })
-})
+        })
 })
 router.post('/configN/updateSJ', (req, res)=>{
 
@@ -175,10 +177,11 @@ router.post('/configN/updateSJ', (req, res)=>{
             horarioSJ.Local = req.body.localSJS
 
         horarioSJ.save().then(()=>{
-            console.log('deu certo, dado atualizado')
+            req.flash('success_msg','Deu certo, horário São José atualizado!')
             res.redirect('/admin//configN/Capelas')
         }).catch((err)=>{
-            console.log('Houve um erro ao tentar atualizar o horário e dia, tente mais uma vez!' + err)
+            req.flash('error_msg','Deu errado, tente mais uma vez!')
+            res.redirect('/admin//configN/Capelas')
         })
     })
 })
@@ -191,32 +194,43 @@ router.post('/configN/updateSL', (req, res)=>{
                 horarioSL.Local = req.body.localSTL
 
             horarioSL.save().then(()=>{
-                console.log('deu certo, dado atualizado')
+                req.flash('success_msg','Deu certo, horário Santa Luzia atualizado!')
                 res.redirect('/admin//configN/Capelas')
             }).catch((err)=>{
-                console.log('Houve um erro ao tentar atualizar o horário e dia, tente mais uma vez!' + err)
+                req.flash('error_msg','Deu errado, tente mais uma vez!')
+                res.redirect('/admin//configN/Capelas')            
             })
-            })
+        })
 })
 
 router.get('/configN/Galeria',(req, res)=>{
     res.render('admin/configN/config-galeria', {
         title:'Admin PSCJ - Galeria',
-        configN: 'true'
+        configN: 'true',
+        style: 'configN-galeria.css'
     })
 })
 
 router.get('/configN/Horario-Matriz',(req, res)=>{
     res.render('admin/configN/config-horario-matriz', {
         title:'Admin PSCJ - Horário Matriz',
-        configN: 'true'
+        configN: 'true',
+        style: 'configN-horirio_matriz.css'
     })
 })
 
 router.get('/configN/Nossa-Historia',(req, res)=>{
     res.render('admin/configN/config-nossa-hitoria', {
         title:'Admin PSCJ - Nossa Hitória',
-        configN: 'true'
+        configN: 'true',
+        style: 'config-historia.css'
+    })
+})
+router.get('/configN/Stories',(req, res)=>{
+    res.render('admin/configN/config-Stories',{
+        title:'Admin PSCJ - Stories',
+        configN: 'true',
+        style: 'config-stories.css'
     })
 })
 
@@ -227,13 +241,13 @@ router.get('/configS',(req, res)=>{
     res.render('admin/configS/adminSecretaria', {
         title:'Admin PSCJ',
         configS: 'true',
-        style: 'inicioconfig.css',
+        style: 'config-inicio.css',
         nome: 'Iara'
     })
 })
-router.get('/configS/',(req, res)=>{
-    res.render('admin/configS/', {
-        title:'Admin PSCJ - Carrossel',
+router.get('/configS/adm-eventos',(req, res)=>{
+    res.render('admin/configS/adm-eventos', {
+        title:'Admin PSCJ - Adm Eventos',
         configS: 'true'
     })
 })

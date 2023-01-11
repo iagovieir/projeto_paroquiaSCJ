@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const bodyparser = require('body-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
-const multer = require('multer')
+//const multer = require('multer')
 
 require('./models/HorarioDM')
 const horarioDM = mongoose.model('horarioDM')
@@ -31,14 +31,14 @@ app.use((req, res, next)=>{
     next()
 })
 
-const storage = multer.diskStorage({
+/*const storage = multer.diskStorage({
     destination: 'uploads',
     filename: (req, file, cb) =>{
         cb(null, Date.now + file.originalname)
     }
 })
 
-const upload = multer({storage: storage})
+const upload = multer({storage: storage})*/
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/paroquiascj').then(()=>{
