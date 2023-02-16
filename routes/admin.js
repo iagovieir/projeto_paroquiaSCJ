@@ -248,7 +248,8 @@ router.get('/configS',(req, res)=>{
 router.get('/configS/adm-eventos',(req, res)=>{
     res.render('admin/configS/adm-eventos', {
         title:'Admin PSCJ - Adm Eventos',
-        configS: 'true'
+        configS: 'true',
+        style: 'configS-adm-eventos.css'
     })
 })
 router.get('/configS/',(req, res)=>{
