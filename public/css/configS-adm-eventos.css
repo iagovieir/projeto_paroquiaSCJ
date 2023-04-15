@@ -1,81 +1,106 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container{
-    float: right;
-    width: 82%;
-    height: 100vh;
-}
-h1{
-    color: #9f4747;
-}
-.cadastrar{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+html {
+    height: 100%;
     width: 100%;
-    height: 50%;
-}
-.button{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-.button button{
-    margin: 2rem 2rem 0 0;
-    background-color: rgb(11, 168, 11);
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    padding: 0.7rem;
-    border: none;
-    border-radius: 0.3rem;
-}
-.consulta{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-.container-cards{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-.cards{
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #eeeeee;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 8px  rgb(118, 115, 115);
-}
-.cards div:nth-of-type(1),
-.cards div:nth-of-type(2){
-    display: flex;
-}
-.sub{
-    flex-direction: column;
-    height: 70%;
-}
-.label{
-    height: 30%;
-    padding: 0.5rem 0 0 0.5rem;
-}
-.item{
-    height: 50%;
-}
-.sub .item:nth-last-of-type(1){
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 0rem 0.5rem 0.5rem 0;
-}
-.sub .item:nth-last-of-type(2){
-    justify-content: center;
-    align-items: center;
-}
+  }
+  *{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .container{
+      float: right;
+      width: 82%;
+      height: 100vh;
+  }
+  h1{
+      color: #9f4747;
+  }
+  .add{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 50%;
+  }
+  .formValues{
+    display: none;
+  }
+  form button{
+      background-color: rgb(11, 168, 11);
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 0.3rem;
+  }
+  form input[type=button]{
+      background-color: red;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 0.3rem;
+  }
+  .button{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+  }
+  .button button{
+      margin: 2rem 2rem 0 0;
+      background-color: rgb(11, 168, 11);
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 0.3rem;
+  }
+  .consulta{
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  }
+  .container-cards{
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+  }
+  .cards{
+      width: 250px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #eeeeee;
+      border-radius: 1rem;
+      box-shadow: 2px 2px 8px  rgb(118, 115, 115);
+  }
+  .cards div:nth-of-type(1),
+  .cards div:nth-of-type(2){
+      display: flex;
+  }
+  .sub{
+      flex-direction: column;
+      height: 70%;
+  }
+  .label{
+      height: 30%;
+      padding: 0.5rem 0 0 0.5rem;
+  }
+  .item{
+      height: 50%;
+  }
+  .sub .item:nth-last-of-type(1){
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 0rem 0.5rem 0.5rem 0;
+  }
+  .sub .item:nth-last-of-type(2){
+      justify-content: center;
+      align-items: center;
+  }

@@ -1,27 +1,65 @@
 <div class="container">
-        <div class="cadastrar">
-                <h1>Cadastre um novo evento</h1>
-            <div class="button">
-                <button onclick="cadastrar()">Adicionar</button>
+      <div class="add">
+            <h1>Cadastre um novo evento</h1>
+            <div class="button" id="button" >
+              <button onclick="adicionar()">Adicionar</button>
             </div>
-        </div>
-
-        <div class="consulta">
-            <h1>Consulte os eventos cadastrados</h1>
-            <div class="container-cards">
-                <div class="cards">
-                    <div class="label">
-                        <h3>Nome do Evento</h3>
-                    </div>
-                    <div class="sub">
-                        <div class="item">
-                            Valor total líquido: R$30,00
-                        </div>
-                        <div class="item">
-                            <p> ver mais +</p>
-                        </div>
-                    </div>
+      
+        <div class="formValues" id="formValues">
+            <form action="/script.js" method="POST">
+                <div class="addPositive">
+                    <label for="descriptionPositive">Descrição do valor: </label><br>
+                    <input type="text" name="descriptionPositive"><br>
+                    <label for="valuePositive">Valor: </label><br>
+                    <input type="number" name="valuePositive">
                 </div>
-            </div>
+                    <div class="addNegative">
+                    <label for="descriptionNegative">Descrição do valor: </label><br>
+                    <input type="text" name="descriptionNegative"><br>
+                    <label for="valueNegative">Valor: </label><br>
+                    <input type="number" name="valueNegative"><br>
+                    <label for="NFe">NFe:</label><br>
+                    <input type="file" name="nefNegative">
+                </div>
+                <input type="button" value="Cancelar" onclick="cancel()">
+                <button>Salvar</button>
+            </form>
         </div>
+      </div>  
+      <div class="consulta">
+        <h1>Consulte os eventos cadastrados</h1>
+          <div class="container-cards">
+              <div class="cards">
+                  <div class="label">
+                      <h3>Nome do Evento</h3>
+                  </div>
+                  <div class="sub">
+                      <div class="item">
+                          Valor total líquido: R$30,00
+                      </div>
+                      <div class="item">
+                          <p> ver mais +</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
+
+<script>
+    function adicionar(){
+  var divbutton = document.getElementById("button")
+  var divform = document.getElementById("formValues")
+  
+  divbutton.style.display = "none";
+  divform.style.display = "flex";
+}
+function cancel() {
+  var divbutton = document.getElementById("button")
+  var divform = document.getElementById("formValues")
+
+  divform.style.display = "none"; 
+  divbutton.style.display = "flex";
+   
+}
+</script>
