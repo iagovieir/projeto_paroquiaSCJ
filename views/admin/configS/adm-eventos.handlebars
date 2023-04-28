@@ -1,30 +1,35 @@
 <div class="container">
       <div class="add">
-            <h1>Cadastre um novo evento</h1>
-            <div class="button" id="button" >
+              <h1>Cadastre um novo evento</h1>
+          <div class="button" id="button" >
               <button onclick="adicionar()">Adicionar</button>
-            </div>
+          </div>
       
-        <div class="formValues" id="formValues">
-            <form action="/script.js" method="POST">
-                <div class="addPositive">
-                    <label for="descriptionPositive">Descrição do valor: </label><br>
-                    <input type="text" name="descriptionPositive"><br>
-                    <label for="valuePositive">Valor: </label><br>
-                    <input type="number" name="valuePositive">
-                </div>
-                    <div class="addNegative">
-                    <label for="descriptionNegative">Descrição do valor: </label><br>
-                    <input type="text" name="descriptionNegative"><br>
-                    <label for="valueNegative">Valor: </label><br>
-                    <input type="number" name="valueNegative"><br>
-                    <label for="NFe">NFe:</label><br>
-                    <input type="file" name="nefNegative">
-                </div>
-                <input type="button" value="Cancelar" onclick="cancel()">
-                <button>Salvar</button>
-            </form>
-        </div>
+      <div class="formValues" id="formValues">
+        <form action="/script.js" method="POST">
+          <div class="addPositive">
+            <label for="descriptionPositive">Descrição do valor: </label><br>
+            <input type="text" name="descriptionPositive"><br>
+            <label for="valuePositive">Valor: </label><br>
+            <input type="number" name="valuePositive"><br>
+            <input class="addButton" type="button" value="Incluir Valor" onclick="addButton()">
+          </div>
+          <div class="addNegative">
+            <label for="descriptionNegative">Descrição do valor: </label><br>
+            <input type="text" name="descriptionNegative"><br>
+            <label for="valueNegative">Valor: </label><br>
+            <input type="number" name="valueNegative"><br>
+            <label for="NFe">NFe:</label><br>
+            <input type="file" name="nefNegative"><br>
+            <input class="delButton" type="button" value="Incluir Valor" onclick="delButton()">
+            <div class="buttons">
+              <button>Salvar</button>
+              <input class="cancelButton" type="button" value="Cancelar" onclick="cancel()">
+            </div>
+          </div>
+        </form>
+        
+      </div>
       </div>  
       <div class="consulta">
         <h1>Consulte os eventos cadastrados</h1>
