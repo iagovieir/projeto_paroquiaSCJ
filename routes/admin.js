@@ -146,7 +146,8 @@ router.get('/configN/Capelas',(req, res)=>{
             localSao: localSao,
             title:'Admin PSCJ - Capelas',
             configN: 'true',
-            style: 'configN-capela.css'
+            style: 'configN-capela.css',
+            js: 'configN-capelas.js'
         })
         })
     })
@@ -249,7 +250,9 @@ router.get('/configS/adm-eventos',(req, res)=>{
     res.render('admin/configS/adm-eventos', {
         title:'Admin PSCJ - Adm Eventos',
         configS: 'true',
-        style: 'configS-adm-eventos.css'
+        style: 'configS-adm-eventos.css',
+        js: 'configS-eventos.js',
+        value: '',
     })
 })
 router.get('/configS/',(req, res)=>{

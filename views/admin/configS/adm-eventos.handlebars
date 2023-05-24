@@ -4,7 +4,7 @@
           <div class="button" id="button" >
               <button onclick="adicionar()">Adicionar</button>
           </div>
-      
+    <div class="form">  
       <div class="formValues" id="formValues">
         <form action="/script.js" method="POST">
           <div class="addPositive">
@@ -28,7 +28,21 @@
             </div>
           </div>
         </form>
-        
+    </div>
+        <div class="showValue" id="showValue">
+          <div class="showValuePositive">
+            <h3>
+              Entradas
+            </h3>
+            <div class="valuePos" id="valuePos"></div>
+          </div>
+          <div class="showValueNegative">
+            <h3>
+              Saídas
+            </h3>
+            <div class="valueNeg"></div>
+          </div>
+        </div>
       </div>
       </div>  
       <div class="consulta">
@@ -50,21 +64,3 @@
           </div>
       </div>
 </div>
-
-<script>
-    function adicionar(){
-  var divbutton = document.getElementById("button")
-  var divform = document.getElementById("formValues")
-  
-  divbutton.style.display = "none";
-  divform.style.display = "flex";
-}
-function cancel() {
-  var divbutton = document.getElementById("button")
-  var divform = document.getElementById("formValues")
-
-  divform.style.display = "none"; 
-  divbutton.style.display = "flex";
-   
-}
-</script>
