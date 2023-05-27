@@ -34,13 +34,17 @@
             <h3>
               Entradas
             </h3>
-            <div class="valuePos" id="valuePos"></div>
+            <div class="valuePos" id="valuePos">
+
+            </div>
           </div>
           <div class="showValueNegative">
             <h3>
               Saídas
             </h3>
-            <div class="valueNeg"></div>
+            <div class="valueNeg" id="valueNeg">
+
+            </div>
           </div>
         </div>
       </div>
@@ -64,3 +68,12 @@
           </div>
       </div>
 </div>
+<script>
+  var showValue = document.getElementById("showValue");
+  var valuePos = document.getElementById("valuePos")
+  var valueNeg = document.getElementById("valueNeg")
+    
+    if (valuePos.innerHTML.trim() || valueNeg.innerHTML.trim() === ""){
+      showValue.style.display = "none"
+    }
+    </script>

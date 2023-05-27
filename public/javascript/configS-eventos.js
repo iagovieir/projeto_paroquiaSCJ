@@ -12,13 +12,3 @@ function cancel() {
   divform.style.display = "none"; 
   divbutton.style.display = "flex";
 }
-
-function fechar(){
-  var valuePos = document.getElementById("valuePos")
-  var showValue = document.getElementById("showValue")
-  console.log(valuePos.innerHTML)
- 
-  if(valuePos == ''){
-    showValue.style.display = "none";
-  }
-}

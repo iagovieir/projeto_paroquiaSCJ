@@ -8,16 +8,9 @@
 .inicio{
     background-color: #833232;
 }
-.name{
+.divStories{
+    display: flex;
+    flex-direction: column;
     height: 7rem;
     background-color: #efefef;
-}
-.label{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
-}
-.stories{
-    height: 60%;
 }

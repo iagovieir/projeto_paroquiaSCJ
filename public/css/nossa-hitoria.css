@@ -1,4 +1,4 @@
-.Body{
+.body{
     width: 100%;
     padding-bottom: 2rem;
     padding-top: 3.6rem;
@@ -8,7 +8,7 @@
 .historia{
     background-color: #833232;
 }
-.name{
+.titlePage{
     display: flex;
     align-items: center;
     justify-content: center;
